@@ -96,7 +96,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 				UserDetails userDetails = customUserDetailsService().loadUserByUsername(username);
 				if(userDetails==null)
 				{
-					logger.debug("CustomAuthenticationProvider : call customUserDetailsService with failure");
+					logger.error("CustomAuthenticationProvider : call customUserDetailsService with failure");
 					return null;
 				}
 				logger.debug("CustomAuthenticationProvider : call customUserDetailsService with success");
@@ -104,7 +104,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 				if( !username.equals(userDetails.getUsername()) || 
 					!password.equals(userDetails.getPassword()) )
 				{
-					logger.debug("CustomAuthenticationProvider : password check not passed");
+					logger.warn("CustomAuthenticationProvider : password check not passed");
 					return null;
 				}
 				logger.debug("CustomAuthenticationProvider : password check passed");
