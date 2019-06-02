@@ -38,7 +38,7 @@ public class CustomTaskScheduler
 	public void periodcTask()
 	{
 		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		//logger.info(String.format("periodic work : %s", f.format(new Date())));
+		logger.debug(String.format("periodic work : %s", f.format(new Date())));
 	}
 
 	@Scheduled(fixedRate = 1000*10)
