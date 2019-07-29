@@ -21,21 +21,19 @@ import org.slf4j.LoggerFactory;
 public class TaskInitializer implements ApplicationListener<ContextRefreshedEvent>
 {
 	private static final Logger logger = LoggerFactory.getLogger(TaskInitializer.class);
-	private UserService userService = null;
-	private UserGroupService groupService = null;
-	private UserPriviledgeService priviledgeService = null;
-	
+
 	@Autowired
-	public TaskInitializer(
-		UserService userService, 
-		UserGroupService groupService, 
-		UserPriviledgeService priviledgeService
-	)
+	private UserService userService;
+
+	@Autowired
+	private UserGroupService groupService;
+
+	@Autowired
+	private UserPriviledgeService priviledgeService;
+
+	public TaskInitializer()
 	{
 		super();
-		this.userService = userService;
-		this.groupService = groupService;
-		this.priviledgeService = priviledgeService;
 	}
 
 	@Override 
